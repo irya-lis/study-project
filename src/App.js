@@ -5,7 +5,7 @@ import News from "./components/News/News";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
-import {Routes, Route, useParams, BrowserRouter} from "react-router-dom";
+import {Routes, Route, useParams, BrowserRouter, HashRouter} from "react-router-dom";
 import UsersContainer from "./components/Users/UsersContainer";
 import HeaderContainer from "./components/Header/HeaderContainer";
 import Login from "./components/Login/Login";
@@ -76,11 +76,11 @@ const AppContainer = compose(
 
 
 const MainApp = (props) => {
-    return <BrowserRouter basename={process.env.PUBLIC_URL}>
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default MainApp;
